@@ -60,8 +60,8 @@ public class TestBase {
 	}
 
 	/***
-	 * validates the api response scehma that if al required feilds are present and
-	 * are of same type as expectedd.
+	 * validates the api response schema that if al required fields are present and
+	 * are of same type as expected.
 	 * 
 	 * @param response
 	 * @param serviceName

@@ -43,7 +43,7 @@ public class GetPromotionsTest extends TestBase {
 		Response response = this.request.getRequest(EndPoints.getPromotionsEndpoint(), prams);
 
 		//Validate response and print details omn report.
-		this.validateAndAttachResponse(HttpStatus.SC_OK, "getAllPromtionTest", response);
+		this.validateAndAttachResponse(HttpStatus.SC_OK, "getAllPromotionTest", response);
 		//Validate schema of response which solve the assignment question 1 and 2.
 		this.validateJsonSchema(response, "getPromotion");
 		//get all program type from response.
@@ -69,12 +69,12 @@ public class GetPromotionsTest extends TestBase {
 		prams.put("apikey", "random string");
 
 		//make a get request on the URL from property file.
-		Response response = this.request.getRequest(EndPoints.getPromotionsEndpoint(), prams);
+		Response response = request.getRequest(EndPoints.getPromotionsEndpoint(), prams);
 
 		//Validate response and print details omn report.
-		this.validateAndAttachResponse(HttpStatus.SC_FORBIDDEN, "getAllPromtionTest", response);
+		validateAndAttachResponse(HttpStatus.SC_FORBIDDEN, "getAllPromotionTest", response);
 		//Validate schema of response which solve the assignment question 1 and 2.
-		this.validateJsonSchema(response, "getPromotion-Negative");
+		validateJsonSchema(response, "getPromotion_Negative");
 
 		//validate all response fields
 		response.then().body("error.message", Matchers.equalTo("invalid api key"))
