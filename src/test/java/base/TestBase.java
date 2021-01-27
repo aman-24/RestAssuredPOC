@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeClass;
 
 import httprequests.EndPoints;
 import httprequests.Request;
@@ -18,7 +18,7 @@ import utils.FileUtils;
 public class TestBase {
 
 	private FileUtils fileUtils = new FileUtils();
-	protected Request request = new Request();
+	protected Request request = null;
 
 	/***
 	 * This method will execute before the test suite starts and calls the
@@ -26,9 +26,10 @@ public class TestBase {
 	 * 
 	 * @throws IOException
 	 */
-	@BeforeSuite
+	@BeforeClass
 	public void setup() throws IOException {
 		configureEndpoints();
+		request = new Request();
 	}
 
 	/***
